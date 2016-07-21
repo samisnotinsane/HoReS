@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Reservation">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="50.0" text="Check-in Date:" />
+      <Label layoutX="18.0" layoutY="86.0" text="Check-out Date:" />
+      <DatePicker layoutX="138.0" layoutY="45.0" prefHeight="27.0" prefWidth="143.0" />
+      <DatePicker layoutX="138.0" layoutY="81.0" prefHeight="27.0" prefWidth="143.0" />
+      <Label layoutX="305.0" layoutY="50.0" text="Room type:" />
+      <ChoiceBox layoutX="392.0" layoutY="45.0" prefHeight="27.0" prefWidth="183.0" />
+      <Button layoutX="452.0" layoutY="90.0" mnemonicParsing="false" text="Check Availibility" />
+      <Separator layoutX="27.0" layoutY="139.0" prefHeight="3.0" prefWidth="556.0" />
+      <Label layoutX="18.0" layoutY="151.0" text="Guest Details:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="432.0" layoutY="359.0" mnemonicParsing="false" text="Confirm Reservation" />
+      <Label layoutX="71.0" layoutY="177.0" text="Title:" />
+      <Label layoutX="25.0" layoutY="216.0" text="Full name:" />
+      <Label layoutX="300.0" layoutY="177.0" text="Address:" />
+      <ChoiceBox layoutX="119.0" layoutY="172.0" prefHeight="27.0" prefWidth="70.0" />
+      <TextField layoutX="117.0" layoutY="211.0" prefHeight="17.0" prefWidth="167.0" />
+      <TextField layoutX="116.0" layoutY="251.0" />
+      <Label layoutX="46.0" layoutY="256.0" text="Phone:" />
+      <TextArea layoutX="367.0" layoutY="172.0" prefHeight="158.0" prefWidth="200.0" />
+   </children>
+</Pane>

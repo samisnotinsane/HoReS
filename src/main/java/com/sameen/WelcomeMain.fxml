@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="177.0" layoutY="170.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="111.0" text="Reservations" />
+      <Button layoutX="313.0" layoutY="170.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="111.0" text="Check in/out" />
+      <Label layoutX="232.0" layoutY="84.0" text="Interface Rapids Hotel" />
+   </children>
+</Pane>
