@@ -1,2 +1,3 @@
 .gitignore
+res
 src/main/java/com/sameen/hot.db

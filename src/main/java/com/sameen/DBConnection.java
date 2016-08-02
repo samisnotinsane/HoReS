@@ -1,4 +1,4 @@
-package main.java.com.sameen;
+package com.sameen;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,20 +13,22 @@ import java.util.Properties;
 
 public class DBConnection {
 
+    private static final String DB_PROPERTIES_PATH = "/Users/sameenislam/Documents/Repositories/HoReS/src/res/db.properties";
+
     public static Connection getConnection() {
         Properties props = new Properties();
-//        FileInputStream fis = null;
-        InputStream input = null;
+        FileInputStream fis = null;
+//        InputStream input = null;
         Connection con = null;
         try {
 
             // http://stackoverflow.com/questions/8275499/how-to-call-getclass-from-a-static-method-in-java
-            Class currentClass = new Object() { }.getClass().getEnclosingClass();
+//            Class currentClass = new Object() { }.getClass().getEnclosingClass();
+//            input = currentClass.getClassLoader().getResourceAsStream(DB_PROPERTIES_PATH);
 
-            input = currentClass.getClassLoader().getResourceAsStream("db.properties");
-            props.load(input);
-//            fis = new FileInputStream("db.properties");
-//            props.load(fis);
+//            props.load(input);
+            fis = new FileInputStream(DB_PROPERTIES_PATH);
+            props.load(fis);
 
             // load the Driver Class
             Class.forName(props.getProperty("DB_DRIVER_CLASS"));
@@ -35,7 +37,7 @@ public class DBConnection {
             con = DriverManager.getConnection(props.getProperty("DB_URL"),
                     props.getProperty("DB_USERNAME"),
                     props.getProperty("DB_PASSWORD"));
-        } catch (IOException | ClassNotFoundException | SQLException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
@@ -47,9 +49,11 @@ public class DBConnection {
         String QUERY = "SELECT guest_id, name, address, phone FROM GUEST";
 
         //using try-with-resources to avoid closing resources (boiler plate code)
-        try (Connection con = DBConnection.getConnection();
-             Statement stmt = con.createStatement();
-             ResultSet rs = stmt.executeQuery(QUERY)) {
+        try {
+
+            Connection con = DBConnection.getConnection();
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(QUERY);
 
             while (rs.next()) {
                 int id = rs.getInt("id");
